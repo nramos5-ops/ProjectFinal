@@ -1,6 +1,6 @@
 <%-- 
-    Document   : login
-    Created on : Jun 22, 2021, 8:33:09 PM
+    Document   : register
+    Created on : Jun 22, 2021, 9:18:16 PM
     Author     : super
 --%>
 
@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel ="stylesheet" href="Styles.css"/>
-        <title>JSP Page</title>
+        <title>Register</title>
     </head>
     
     <body>
@@ -31,15 +31,21 @@
         <main>
             <div class="content">
                 <form action="membership?action=profile" method="POST">
-                    <label>Username:</label>
-                    <input type="text" name="name"><br>
-                    <label>Password:</label>
+                    <label>First name:  </label>
+                    <input type="text" name="firstName"><br>
+                    <label>Last name:  </label>
+                    <input type="text" name="LastName"><br>
+                    <label>Username:  </label>
+                    <input type="text" name="usertName"><br>
+                    <label>Password:  </label>
                     <input type="password" name="password"><br>
+                    <label>admin:  </label>
+                    <input type="checkbox" name="admin"><br>
                     <input type ="submit" name="submit" value="Submit">
                 </form>
                 
-                <a href="register.jsp">register now</a>
+                <a href="login.jsp">Already a user?</a>
              </div> 
-        </main>  
+        </main>
     </body>
 </html>

@@ -39,7 +39,6 @@
 
         <main>
             <div class="Welcome-text">
-
                 <h1>Welcome to Thrift Cave!</h1>
                 <p>This is a place where you can shop to your hearts content! We offer a wide variety of items
                     such as clothes, furniture, sporting equipment and much more! If you stop by the right day you
@@ -59,7 +58,6 @@
                         <li><img src="Cap&Thanos.jpg" alt="" title="Captian America and Thanos"></li>
                         <li><img src="KitchenAid.jpg" alt="" title="KitchenAid Mixer"></li>
                         <li><img src="psvita.jpg" alt="" title="PlayStation Vita"></li>
-
                     </ul>
                 </div>
             </div>
