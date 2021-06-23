@@ -47,7 +47,7 @@
                 </p>
 
                 <div>
-                    <button type="button"><a href="login">Login</a></button>
+                    <button type="button"><a href="login.jsp">Login</a></button>
                 </div>
             </div>
 
