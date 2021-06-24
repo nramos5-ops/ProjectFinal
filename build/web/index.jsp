@@ -33,6 +33,7 @@
                     <li><a href="ContactUs.jsp">Contact</a></li>
                     <li><a href="AboutUs.jsp">About</a></li>
                     <li><a href="FAQ.jsp">FAQ</a></li>
+                    <li><a href="/ProjectFinal/logout">Logout</a></li>
                 </ul>
             </nav>
         </header>

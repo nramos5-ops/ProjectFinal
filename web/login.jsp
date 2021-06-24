@@ -19,11 +19,8 @@
                 <img src="Thrift.png" alt="Logo">
 
                 <ul class="NavigationBar">
-                    <li><a href="index.jsp">Home</a></li>
-                    <li><a href="Store.jsp">Store</a></li>
-                    <li><a href="ContactUs.jsp">Contact</a></li>
-                    <li><a href="AboutUs.jsp">About</a></li>
-                    <li><a href="FAQ.jsp">FAQ</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                    <li><a href="register.jsp">Register</a></li>
                 </ul>
             </nav>
         </header>

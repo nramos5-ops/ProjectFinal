@@ -5,17 +5,28 @@
             30
         </session-timeout>
     </session-config>
-        
+    
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
-    </welcome-file-list> 
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
     
     <servlet>
         <servlet-name>UserValidationServlet</servlet-name>
         <servlet-class>UserValidation.UserValidationServlet</servlet-class>
     </servlet>
+    
     <servlet-mapping>
         <servlet-name>UserValidationServlet</servlet-name>
         <url-pattern>/uservalidation</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UserLogOutServlet</servlet-name>
+        <servlet-class>UserValidation.UserLogOutServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UserLogOutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 </web-app>

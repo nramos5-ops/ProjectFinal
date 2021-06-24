@@ -19,28 +19,29 @@
                 <img src="Thrift.png" alt="Logo">
 
                 <ul class="NavigationBar">
-                    <li><a href="index.jsp">Home</a></li>
-                    <li><a href="Store.jsp">Store</a></li>
-                    <li><a href="ContactUs.jsp">Contact</a></li>
-                    <li><a href="AboutUs.jsp">About</a></li>
-                    <li><a href="FAQ.jsp">FAQ</a></li>
+                    <li><a href="login.jsp">Login</a></li>
+                    <li><a href="register.jsp">Register</a></li>
                 </ul>
             </nav>
         </header>
         
         <main>
             <div class="content">
-                <form action="membership?action=profile" method="POST">
+                <form action="/ProjectFinal/uservalidation?action=register" method="post">
                     <label>First name:  </label>
                     <input type="text" name="firstName"><br>
+                    
                     <label>Last name:  </label>
-                    <input type="text" name="LastName"><br>
+                    <input type="text" name="lastName"><br>
+                    
                     <label>Username:  </label>
-                    <input type="text" name="usertName"><br>
+                    <input type="text" name="username"><br>
+                    
                     <label>Password:  </label>
                     <input type="password" name="password"><br>
-                    <label>admin:  </label>
-                    <input type="checkbox" name="admin"><br>
+                    
+                    <p>${errorMessage}</p>
+                    
                     <input type ="submit" name="submit" value="Submit">
                 </form>
                 
