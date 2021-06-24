@@ -103,6 +103,10 @@ public class UserValidationServlet extends HttpServlet {
                     
                     query += adminInput != null ? " and user.admin = " + adminInput[0]
                                                 : " and user.admin = 0";
+                    
+                    if (adminInput != null) {
+                        session.setAttribute("admin", "admin");
+                    }
 
                     //Query to be sent
                     validateUser = connection.prepareStatement(query);
@@ -140,8 +144,6 @@ public class UserValidationServlet extends HttpServlet {
                         + usernameInput 
                         + "' and user.admin = 0";
 
-                System.out.println(query);
-
                 //Query to be sent
                 validateUser = connection.prepareStatement(query);
                 resultset = validateUser.executeQuery();
@@ -160,7 +162,6 @@ public class UserValidationServlet extends HttpServlet {
                     
                     
                     if (firstNameInput != null && lastNameInput != null && usernameInput != null && passwordInput != null) {
-                        System.out.println("INside teh if");
                         addUserToSQL(firstNameInput, lastNameInput, usernameInput, passwordInput);
                         getServletContext().getRequestDispatcher(HOME_URL).forward(request, response);
                     } else {
@@ -168,7 +169,6 @@ public class UserValidationServlet extends HttpServlet {
                     getServletContext().getRequestDispatcher(REGISTER_URL).forward(request, response);
                     }
                 }
-
             } catch (InstantiationException ex) {
                 ex.printStackTrace();
             } catch (IllegalAccessException ex) {

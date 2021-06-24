@@ -29,7 +29,7 @@
 
                 <ul class="NavigationBar">
                     <li><a href="index.jsp">Home</a></li>
-                    <li><a href="Store.jsp">Store</a></li>
+                    <li><a href="/ProjectFinal/products">Store</a></li>
                     <li><a href="ContactUs.jsp">Contact</a></li>
                     <li><a href="AboutUs.jsp">About</a></li>
                     <li><a href="FAQ.jsp">FAQ</a></li>
@@ -52,10 +52,10 @@
             </div>
 
             <div class="featured">
-                <h1>Featured producted</h1>
+                <h1>Featured products</h1>
                 <div class="slider">
                     <ul id="slider">
-                        <li><img src="s-l500.jpg" alt="" title="Pokemon Platinum"></li>
+                        <li><img src="pokemonPlatinum.jpg" alt="" title="Pokemon Platinum"></li>
                         <li><img src="Cap&Thanos.jpg" alt="" title="Captian America and Thanos"></li>
                         <li><img src="KitchenAid.jpg" alt="" title="KitchenAid Mixer"></li>
                         <li><img src="psvita.jpg" alt="" title="PlayStation Vita"></li>

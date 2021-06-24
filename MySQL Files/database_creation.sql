@@ -33,5 +33,19 @@ CREATE TABLE product (
 INSERT INTO product
 	(Name, Price, ImagePath)
 VALUES
-	('PlayStation 5', 499.99, 'c:/images/ps5.jpeg'),
-	('M1 Mac', 789.99, 'c:/images/m1Mac.jpeg');
+	('Pokemon Platinum', 35.00, 'pokemonPlatinum.jpg'),
+	('PlayStation Vita', 80.00, 'psvita.jpg'),
+	('Jordan Shoes', 30.00, 'NikeAirJordan.jpg'),
+	('Couch', 50.00, 'couch.jpg'),
+	('Pearler Figures', 5.00, 'Cap&Thanos.jpg'),
+	('UNCC Jacket', 5.00, 'UNCCJacket.jpg'),
+	('Tennis Raquet', 15.00, 'tennisRacquet.jpg'),
+	('KitchenAid Mixed', 250.00, 'KitchenAid.jpg'),
+	('Mr. Heater', 12.00, 'heater.jpg'),
+	('HolyStone Drone', 20.00, 'drone.jpg'),
+	('Black Dress', 6.00, 'blackDress.jpg'),
+	('Brown Shoes', 5.00, 'BrownShoes.jpg'),
+	('Beats Pro', 50.00, 'beats.jpg'),
+	('iPad Pro', 350.00, 'ipadPro.jpg'),
+	('Superman Action Figure', 5.00, 'Superman.jpg'),
+	('Electric Saw', 25.00, 'Saw.jpg');
