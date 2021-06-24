@@ -30,15 +30,22 @@
         
         <main>
             <div class="content">
-                <form action="membership?action=profile" method="POST">
-                    <label>Username:  </label>
-                    <input type="text" name="name"><br>
-                    <label>Password:  </label>
+                <form method="post" action="/ProjectFinal/uservalidation?action=login">
+                    <label>Username:</label>
+                    <input type="text" name="username"><br>
+                    
+                    <label>Password:</label>
                     <input type="password" name="password"><br>
+                    
+                    <input type="checkbox" name='admin' value="1"/>
+                    <label>Admin</label><br><br> 
+                    
+                    <p>${errorMessage}</p>
+                    
                     <input type ="submit" name="submit" value="Submit">
                 </form>
                 
-                <a href="register.jsp">register now</a>
+                <a href="register.jsp">Register now</a>
             </div> 
         </main>
     </body>
