@@ -155,18 +155,13 @@ public class UserValidationServlet extends HttpServlet {
                 } else {
                     session.removeAttribute("errorMessage");
                     
-                    System.out.println("fristName = " + firstNameInput);
-                    System.out.println("lastNameInput = " + lastNameInput);
-                    System.out.println("usernameInput = " + usernameInput);
-                    System.out.println("passwordInput = " + passwordInput);
-                    
                     
                     if (firstNameInput != null && lastNameInput != null && usernameInput != null && passwordInput != null) {
                         addUserToSQL(firstNameInput, lastNameInput, usernameInput, passwordInput);
                         getServletContext().getRequestDispatcher(HOME_URL).forward(request, response);
                     } else {
-                    session.setAttribute("errorMessage", MISSING_PARAM_MESSAGE);
-                    getServletContext().getRequestDispatcher(REGISTER_URL).forward(request, response);
+                        session.setAttribute("errorMessage", MISSING_PARAM_MESSAGE);
+                        getServletContext().getRequestDispatcher(REGISTER_URL).forward(request, response);
                     }
                 }
             } catch (InstantiationException ex) {

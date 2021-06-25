@@ -63,4 +63,4 @@ INSERT INTO contact
 	(Name, PhoneNumber, Email, Message)
 VALUES
 	("Carlos DC", "(980)555-1212", "cdelcarp@uncc.edu", "Please hold an item for me."),
-    ("Amy Smith", "(704-555-1212", "asmith@gmail.com", "Is the iPad still availabel?");
+    ("Amy Smith", "(704)555-1212", "asmith@gmail.com", "Is the iPad still availabel?");

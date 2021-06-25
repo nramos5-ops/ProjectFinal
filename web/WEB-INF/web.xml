@@ -46,7 +46,6 @@
     </servlet-mapping>
     
     
-   
     <servlet>
         <servlet-name>RemoveProductServlet</servlet-name>
         <servlet-class>Products.RemoveProductServlet</servlet-class>
@@ -55,5 +54,16 @@
     <servlet-mapping>
         <servlet-name>RemoveProductServlet</servlet-name>
         <url-pattern>/removeProduct</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>ContactValidationServlet</servlet-name>
+        <servlet-class>ContactUs.ContactValidationServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ContactValidationServlet</servlet-name>
+        <url-pattern>/contactValidation</url-pattern>
     </servlet-mapping>
 </web-app>

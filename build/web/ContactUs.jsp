@@ -37,28 +37,30 @@
         <main>
             <div class="content">
                 <h1>Contact us</h1>
-                <p>If you need help with anything please feel free to let us know how we can help you whether that be through phone or email</p>
+                <p>If you need help with anything please feel free to let us know how we can help you whether that be through phone or email.</p>
 
-                <form>
+                <form action="contactValidation" method="post">
                     <div class="inputinfo">
                         <label>Name: </label>
-                        <input type="text">
+                        <input type="text" name="name">
                     </div>
 
                     <div class="inputinfo">
                         <label>Phone Number: </label>
-                        <input type="text">
+                        <input type="text" name="phone">
                     </div>
 
                     <div class="inputinfo">
                         <label>Email: </label>
-                        <input type="text">
+                        <input type="text" name="email">
                     </div>
 
                     <div class="inputinfo">
                         <label>Message: </label>
-                        <input type="text">
+                        <input type="text" name="message">
                     </div>
+                    
+                    <p>${errorMessage}</p>
 
                     <input type="submit" value="Submit">
                 </form>
