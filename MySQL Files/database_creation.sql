@@ -49,3 +49,18 @@ VALUES
 	('iPad Pro', 350.00, 'ipadPro.jpg'),
 	('Superman Action Figure', 5.00, 'Superman.jpg'),
 	('Electric Saw', 25.00, 'Saw.jpg');
+    
+CREATE TABLE contact (
+	ContactID INT NOT NULL AUTO_INCREMENT,
+    Name VARCHAR(100),
+    PhoneNumber VARCHAR(13),
+    Email VARCHAR(100),
+    Message VARCHAR(200),
+    PRIMARY KEY(ContactID)
+);
+
+INSERT INTO contact
+	(Name, PhoneNumber, Email, Message)
+VALUES
+	("Carlos DC", "(980)555-1212", "cdelcarp@uncc.edu", "Please hold an item for me."),
+    ("Amy Smith", "(704-555-1212", "asmith@gmail.com", "Is the iPad still availabel?");

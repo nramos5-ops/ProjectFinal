@@ -6,7 +6,11 @@
 package Products;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +23,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "RemoveProductServlet", urlPatterns = {"/RemoveProductServlet"})
 public class RemoveProductServlet extends HttpServlet {
+    final String STORE_URL = "/products";
+    String url = "jdbc:mysql://127.0.0.1:3306/final_project";
+    String username = "root";
+    String password = "carlos14";
+    Connection connection = null;
+    PreparedStatement deleteProduct = null;
+    ResultSet resultset = null;
+    String query;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,22 +41,32 @@ public class RemoveProductServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RemoveProductServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RemoveProductServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            connection = DriverManager.getConnection(url, username, password);
+
+            query = "delete from product where ProductID = " + request.getParameter("id");
+
+            //Query to be sent
+            deleteProduct = connection.prepareStatement(query);
+            deleteProduct.execute();
+            connection.close();
+            
+            
+            getServletContext().getRequestDispatcher(STORE_URL).forward(request, response);
+        } catch (InstantiationException ex) {
+            ex.printStackTrace();
+        } catch (IllegalAccessException ex) {
+            ex.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
-    }
+    } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

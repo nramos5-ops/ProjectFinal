@@ -122,8 +122,7 @@ button a{
 
 label{
     font-size: large;
-    float: left;
-    display: block;
+    display: inline-block;
     width: 150px;
     line-height: 30px;
 }

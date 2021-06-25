@@ -52,14 +52,14 @@
                             <p><fmt:formatNumber value = "${product.price}" type = "currency"/></p>
                             
                             <c:if test="${admin == 'admin'}">   
-                                <form action="removeProduct" method="post">
+                                <form action="removeProduct?id=${product.ID}" method="post">
                                     <input type ="submit" name="submit" value="Remove">
                                 </form>
                             </c:if>
                         </div>
                         
                        
-                    <c:if test="${(loop.index + 1) % 4 == 0}">
+                    <c:if test="${((loop.index + 1) % 4 == 0) || ((loop.index + 1) == products.size())}">
                         </div>
                     </c:if>
                 </c:forEach>  

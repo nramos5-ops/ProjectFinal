@@ -34,8 +34,8 @@
                     <label>Password:</label>
                     <input type="password" name="password"><br>
                     
-                    <input type="checkbox" name='admin' value="1"/>
-                    <label>Admin</label><br><br> 
+                    <label>Admin</label>
+                    <input type="checkbox" name='admin' value="1"/><br><br> 
                     
                     <p>${errorMessage}</p>
                     
