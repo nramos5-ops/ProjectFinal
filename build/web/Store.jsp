@@ -58,7 +58,7 @@
                             </c:if>
 
                                 <div class ="col">
-                                    <img src="${product.imagePath}" alt="WorkInProgress" style="width: 100%">
+                                    <img src="${product.imagePath}" alt="WorkInProgress">
                                     <h3>${product.name}</h3>
                                     <p><fmt:formatNumber value = "${product.price}" type = "currency"/></p>
 

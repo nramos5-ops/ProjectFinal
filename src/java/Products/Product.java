@@ -16,12 +16,15 @@ public class Product implements Serializable {
     private Double price;
     private String imagePath; 
 
+    
+    //Noarg constructor
     public Product() {
         this.ID = 0;
         this.name = "";
         this.price = 0.00;
         this.imagePath = "";
     }
+    
     
     //Setters and getters
     public int getID() {

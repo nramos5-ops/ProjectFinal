@@ -11,12 +11,20 @@ import java.io.Serializable;
  * @author carlosdelcarpio
  */
 public class Contact implements Serializable{
-    int contactID;
-    String name;
-    String phoneNumber;
-    String email;
-    String message;
-
+    private int contactID;
+    private String name;
+    private String phoneNumber;
+    private String email;
+    private String message;
+    
+    //No arg constructor
+    public Contact() {
+        this.contactID = 0;
+        this.name = "";
+        this.phoneNumber = "";
+        this.email = "";
+        this.message = "";
+    }
     
     //Setters and Getters
     public int getContactID() {
