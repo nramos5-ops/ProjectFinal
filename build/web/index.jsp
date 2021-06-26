@@ -25,8 +25,9 @@
 
     <body>
         <header>
+            <!--Navigation Bar-->
             <nav class="StoreLogo">
-                <img src="Thrift.png" alt="Logo">
+                <img src="Images/Thrift.png" alt="Logo">
 
                 <ul class="NavigationBar">
                     <li><a href="index.jsp">Home</a></li>
@@ -59,10 +60,10 @@
                 <h1>Featured products</h1>
                 <div class="slider">
                     <ul id="slider">
-                        <li><img src="pokemonPlatinum.jpg" alt="" title="Pokemon Platinum"></li>
-                        <li><img src="Cap&Thanos.jpg" alt="" title="Captian America and Thanos"></li>
-                        <li><img src="KitchenAid.jpg" alt="" title="KitchenAid Mixer"></li>
-                        <li><img src="psvita.jpg" alt="" title="PlayStation Vita"></li>
+                        <li><img src="Images/pokemonPlatinum.jpg" alt="" title="Pokemon Platinum"></li>
+                        <li><img src="Images/Cap&Thanos.jpg" alt="" title="Captian America and Thanos"></li>
+                        <li><img src="Images/KitchenAid.jpg" alt="" title="KitchenAid Mixer"></li>
+                        <li><img src="Images/psvita.jpg" alt="" title="PlayStation Vita"></li>
                     </ul>
                 </div>
             </div>
@@ -70,7 +71,14 @@
 
         <footer>
             <a href="index.jsp">Home</a>
-            <a href="ContactUs.jsp">Contact</a>
+            <c:choose>
+                <c:when test="${admin == 'admin'}">
+                    <a href="/ProjectFinal/contactList">Contact</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="ContactUs.jsp">Contact</a>
+                </c:otherwise>
+            </c:choose>
         </footer>
     </body>
 </html>

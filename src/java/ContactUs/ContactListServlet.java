@@ -50,19 +50,21 @@ public class ContactListServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         try {
+            //Connect to database
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(url, username, password);
 
+            //Query to be executed
             query = "select * from contact";
 
             //Query to be sent
             validateUser = connection.prepareStatement(query);
             resultset = validateUser.executeQuery();
             
-            
+            //Reset ArrayList
             if (resultset != null) contacts = new ArrayList<Contact>();
             
-            
+            //Loop through results, generate contact object and add to ArrayList
             while (resultset.next()) {
                 Contact contact = new Contact();
                 
@@ -75,11 +77,11 @@ public class ContactListServlet extends HttpServlet {
                 contacts.add(contact);
             }
             
-            for (int i = 0; i < contacts.size(); i++) {
-                System.out.println(contacts.get(i).toString());
-            }
+            connection.close();
             
+            //set contact attribute to loop in jsp
             request.setAttribute("contacts", contacts);
+            //Foward user to contact list page for admin
             getServletContext().getRequestDispatcher(CONTACTUS_URL).forward(request, response);
         } catch (InstantiationException | IllegalAccessException | SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();

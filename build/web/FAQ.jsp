@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="Styles.css">
         <link rel="stylesheet" href="jquery-ui.min.css">
         <link href="jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
-        <title>ThriftCave</title>
+        <title>FAQ</title>
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="jquery-ui.min.js"></script>
@@ -27,8 +27,9 @@
 
     <body>
         <header>
+            <!--Navigation Bar-->
             <nav class="StoreLogo">
-                <img src="Thrift.png" alt="Logo">
+                <img src="Images/Thrift.png" alt="Logo">
 
                 <ul class="NavigationBar">
                     <li><a href="index.jsp">Home</a></li>
@@ -100,7 +101,14 @@
 
         <footer>
             <a href="index.jsp">Home</a>
-            <a href="ContactUs.jsp">Contact</a>
+            <c:choose>
+                <c:when test="${admin == 'admin'}">
+                    <a href="/ProjectFinal/contactList">Contact</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="ContactUs.jsp">Contact</a>
+                </c:otherwise>
+            </c:choose>
         </footer>
     </body>
 </html>

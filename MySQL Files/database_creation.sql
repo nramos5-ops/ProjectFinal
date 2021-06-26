@@ -33,22 +33,22 @@ CREATE TABLE product (
 INSERT INTO product
 	(Name, Price, ImagePath)
 VALUES
-	('Pokemon Platinum', 35.00, 'pokemonPlatinum.jpg'),
-	('PlayStation Vita', 80.00, 'psvita.jpg'),
-	('Jordan Shoes', 30.00, 'NikeAirJordan.jpg'),
-	('Couch', 50.00, 'couch.jpg'),
-	('Pearler Figures', 5.00, 'Cap&Thanos.jpg'),
-	('UNCC Jacket', 5.00, 'UNCCJacket.jpg'),
-	('Tennis Raquet', 15.00, 'tennisRacquet.jpg'),
-	('KitchenAid Mixed', 250.00, 'KitchenAid.jpg'),
-	('Mr. Heater', 12.00, 'heater.jpg'),
-	('HolyStone Drone', 20.00, 'drone.jpg'),
-	('Black Dress', 6.00, 'blackDress.jpg'),
-	('Brown Shoes', 5.00, 'BrownShoes.jpg'),
-	('Beats Pro', 50.00, 'beats.jpg'),
-	('iPad Pro', 350.00, 'ipadPro.jpg'),
-	('Superman Action Figure', 5.00, 'Superman.jpg'),
-	('Electric Saw', 25.00, 'Saw.jpg');
+	('Pokemon Platinum', 35.00, 'Images/pokemonPlatinum.jpg'),
+	('PlayStation Vita', 80.00, 'Images/psvita.jpg'),
+	('Jordan Shoes', 30.00, 'Images/NikeAirJordan.jpg'),
+	('Couch', 50.00, 'Images/couch.jpg'),
+	('Pearler Figures', 5.00, 'Images/Cap&Thanos.jpg'),
+	('UNCC Jacket', 5.00, 'Images/UNCCJacket.jpg'),
+	('Tennis Raquet', 15.00, 'Images/tennisRacquet.jpg'),
+	('KitchenAid Mixed', 250.00, 'Images/KitchenAid.jpg'),
+	('Mr. Heater', 12.00, 'Images/heater.jpg'),
+	('HolyStone Drone', 20.00, 'Images/drone.jpg'),
+	('Black Dress', 6.00, 'Images/blackDress.jpg'),
+	('Brown Shoes', 5.00, 'Images/BrownShoes.jpg'),
+	('Beats Pro', 50.00, 'Images/beats.jpg'),
+	('iPad Pro', 350.00, 'Images/ipadPro.jpg'),
+	('Superman Action Figure', 5.00, 'Images/Superman.jpg'),
+	('Electric Saw', 25.00, 'Images/Saw.jpg');
     
 CREATE TABLE contact (
 	ContactID INT NOT NULL AUTO_INCREMENT,

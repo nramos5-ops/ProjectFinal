@@ -16,13 +16,14 @@
 
         <!-- css -->
         <link rel="stylesheet" href="Styles.css">
-        <title>ThriftCave</title>
+        <title>Contact Us</title>
     </head>
 
     <body>
         <header>
+            <!--Navigation Bar-->
             <nav class="StoreLogo">
-                <img src="Thrift.png" alt="Logo">
+                <img src="Images/Thrift.png" alt="Logo">
 
                 <ul class="NavigationBar">
                     <li><a href="index.jsp">Home</a></li>
@@ -45,7 +46,9 @@
         <main>
             <div class="content">
                 <h1>Contact us</h1>
-                <p>If you need help with anything please feel free to let us know how we can help you whether that be through phone or email.</p>
+                <p>If you need help with anything please feel free to let us know how we can help you 
+                    whether that be through phone or email.
+                </p>
 
                 <form action="contactValidation" method="post">
                     <div class="inputinfo">
@@ -77,7 +80,14 @@
 
         <footer>
             <a href="index.jsp">Home</a>
-            <a href="ContactUs.jsp">Contact</a>
+            <c:choose>
+                <c:when test="${admin == 'admin'}">
+                    <a href="/ProjectFinal/contactList">Contact</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="ContactUs.jsp">Contact</a>
+                </c:otherwise>
+            </c:choose>
         </footer>
     </body>
 </html>

@@ -15,20 +15,15 @@ and open the template in the editor.
 }
 
 
-/*.NavigationLogo{*/
-/*    width: 1500px;*/
-/*    margin: auto;*/
-/*}*/
-
 body{
-    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url("Background.jpg");
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),url("Images/Background.jpg");
     height: 100vh;
     width: 80%;
     margin: 0px auto;
     background-size: cover;
     background-position: center;
-    /*position: relative;*/
 }
+
 
 .wrapper{
     width: 80%;
@@ -41,9 +36,13 @@ body{
     list-style: none;
     margin-top: 30px;
 }
+
+
 .NavigationBar li{
     display: inline-block;
 }
+
+
 .NavigationBar li a{
     text-decoration: none;
     color: yellow;
@@ -52,6 +51,8 @@ body{
     font-size: 20px;
     text-transform: uppercase;
 }
+
+
 .StoreLogo img{
     width: 75px;
     float: left;
@@ -60,16 +61,13 @@ body{
     border-radius: 100px;
 }
 
+
 main{
     clear: both;
     padding-top: 50px;
     padding-bottom: 50px;
 }
-/* .Welcome-text{
-    padding-top: 20px;
-    color: white;
-      
-} */
+
 
 .Welcome-text  h1{
     padding-top: 15%;
@@ -79,14 +77,15 @@ main{
     font-family: Candara;
 }
 
+
 .Welcome-text p{   
     color: white;
-    
     background: rgba(0, 0, 0, .3);
     background-size: 0;
     width: 50%;
     margin-left: 25%;
 }
+
 
 .featured h1{
     padding-top: 13%;
@@ -107,6 +106,8 @@ button{
     background: transparent;
     display: block;
 }
+
+
 button a{
     text-decoration: none;
     color: yellow;
@@ -120,60 +121,67 @@ button a{
     padding: 15px;
 }
 
+
 label{
     font-size: large;
     display: inline-block;
-    width: 150px;
+    width: 120px;
     line-height: 30px;
 }
+
 
 input[type=text] {
     padding: 5px 10px;
     border-radius: 4px;
 }
+
+
+input[type=password] {
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+
 .content{
     background: white;
     border-radius: 20px;
     padding: 20px;
 }
 
+
 p{
     padding: 10px 0px;
 }
 
+
 .row{
     padding-top: 15px;
     display: flex;
-    
-    
  }
+ 
+ 
 .col{
     display: block;
     width: 100%;
     padding: 10px 5px 10px;
-
 }
+
 
 .col img{
     display: block;
     height: 75%;
 }
 
+
 .slider{
     padding-left: 34%;
 }
+
+
 .aboutusImg {
     padding: 10px;
     display: flex;
 }
-
-
-/* .small-container{
-    max-width: 1080px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-} */
 
 
 footer{
@@ -183,10 +191,13 @@ footer{
     padding-right: 70px;
 }
 
+
 footer a {
     color: white;
     
 }
+
+
 .scroll-top{
     width: 100px;
     padding: 15px 0;
@@ -200,17 +211,48 @@ footer a {
 
 
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
+
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
+
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+
+.aboutus-row {
+    display: flex;
+}
+
+
+.aboutus-column {
+    margin: auto;
+}
+
+
+.right {
+    display: table;
+    flex: 30%;
+    border: purple 1px solid;
+}
+
+
+.aboutus-text {
+    display: table-cell;
+    margin: 0;
+    vertical-align: middle;
+}
+
+
+.aboutus-image {
+    width: 70vw;
 }

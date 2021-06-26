@@ -11,13 +11,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel ="stylesheet" href="Styles.css"/>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <title>JSP Page</title>
+        <title>Login</title>
         
     </head>
     <body>
         <header>
+            <!--Navigation Bar-->
             <nav class="StoreLogo">
-                <img src="Thrift.png" alt="Logo">
+                <img src="Images/Thrift.png" alt="Logo">
 
                 <ul class="NavigationBar">
                     <li><a href="login.jsp">Login</a></li>
@@ -41,7 +42,7 @@
                     <p>${errorMessage}</p>
                     
                     <input type ="submit" name="submit" value="Submit">
-                </form>
+                </form><br>
                 
                 <a href="register.jsp">Register now</a>
             </div> 

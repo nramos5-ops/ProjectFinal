@@ -42,23 +42,24 @@ public class ProductServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        HttpSession session = request.getSession();
         response.setContentType("text/html;charset=UTF-8");
         
         try {
+            //Connect to database
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(url, username, password);
 
+            //Query to be executed
             query = "select * from product";
 
             //Query to be sent
             validateUser = connection.prepareStatement(query);
             resultset = validateUser.executeQuery();
             
-            
+            //Reset ArrayList
             if (resultset != null) products = new ArrayList<Product>();
             
-            
+            //Loop through results from database, create product object, add to ArrayList
             while (resultset.next()) {
                 Product product = new Product();
                 
@@ -70,21 +71,12 @@ public class ProductServlet extends HttpServlet {
                 products.add(product);
             }
             
-            
+            //Make ArrayList available to jsp
+            connection.close();
             request.setAttribute("products", products);
             getServletContext().getRequestDispatcher(STORE_URL).forward(request, response);
-            //Evaluates results
-//            if (resultset.next()) {
-////                session.removeAttribute("errorMessage");
-//            }
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException | IllegalAccessException | SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
-        } catch (IllegalAccessException ex) {
-            ex.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
     } 
 

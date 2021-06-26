@@ -19,13 +19,14 @@
         <link rel="stylesheet" href="Styles.css">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="JsScript.js"></script>
-        <title>ThriftCave</title>
+        <title>Store</title>
     </head>
 
     <body>
         <header>
+            <!--Navigation Bar-->
             <nav class="StoreLogo">
-                <img src="Thrift.png" alt="Logo">
+                <img src="Images/Thrift.png" alt="Logo">
 
                 <ul class="NavigationBar">
                     <li><a href="index.jsp">Home</a></li>
@@ -48,36 +49,51 @@
         <main>
             <div class="content">
                 <h1>Shop</h1>
-                <c:forEach var="product" items="${products}" varStatus="loop">
-                    <c:if test="${loop.index % 4 == 0}">
-                        <div class="row">
-                    </c:if>
-                            
-                        <div class ="col">
-                            <img src="${product.imagePath}" alt="WorkInProgress" style="width: 100%">
-                            <h3>${product.name}</h3>
-                            <p><fmt:formatNumber value = "${product.price}" type = "currency"/></p>
-                            
-                            <c:if test="${admin == 'admin'}">   
-                                <form action="removeProduct?id=${product.ID}" method="post">
-                                    <input type ="submit" name="submit" value="Remove">
-                                </form>
-                            </c:if>
-                        </div>
-                        
-                       
-                    <c:if test="${((loop.index + 1) % 4 == 0) || ((loop.index + 1) == products.size())}">
-                        </div>
-                    </c:if>
-                </c:forEach>  
                 
-                <button type="button" class="scroll-top">Click to scroll to top</button>
+                <c:choose>
+                    <c:when test="${products.size() > 0}">
+                        <c:forEach var="product" items="${products}" varStatus="loop">
+                            <c:if test="${loop.index % 4 == 0}">
+                                <div class="row">
+                            </c:if>
+
+                                <div class ="col">
+                                    <img src="${product.imagePath}" alt="WorkInProgress" style="width: 100%">
+                                    <h3>${product.name}</h3>
+                                    <p><fmt:formatNumber value = "${product.price}" type = "currency"/></p>
+
+                                    <c:if test="${admin == 'admin'}">   
+                                        <form action="removeProduct?id=${product.ID}" method="post">
+                                            <input type ="submit" name="submit" value="Remove">
+                                        </form>
+                                    </c:if>
+                                </div>
+
+                            <c:if test="${((loop.index + 1) % 4 == 0) || ((loop.index + 1) == products.size())}">
+                                </div>
+                            </c:if>
+                        </c:forEach>  
+
+                        <button type="button" class="scroll-top">Click to scroll to top</button>
+                    </c:when>
+                    
+                    <c:otherwise>
+                        <br><h2>Come back soon to see new items</h2>
+                    </c:otherwise>
+                </c:choose> 
             </div>    
         </main>
 
         <footer>
             <a href="index.jsp">Home</a>
-            <a href="ContactUs.jsp">Contact</a>
+            <c:choose>
+                <c:when test="${admin == 'admin'}">
+                    <a href="/ProjectFinal/contactList">Contact</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="ContactUs.jsp">Contact</a>
+                </c:otherwise>
+            </c:choose>
         </footer>
     </body>
 </html>

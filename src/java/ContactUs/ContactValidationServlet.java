@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -24,6 +24,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "ContactValidationServlet", urlPatterns = {"/ContactValidationServlet"})
 public class ContactValidationServlet extends HttpServlet {
+    final String CONTACT_THANK_YOU_URL = "/ContactUsThanks.jsp";
     final String CONTACT_US_URL        = "/ContactUs.jsp";
     final String MISSING_PARAM_MESSAGE = "Please fill out entire form";
     String url = "jdbc:mysql://127.0.0.1:3306/final_project";
@@ -52,29 +53,36 @@ public class ContactValidationServlet extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         
-        
+        //Check that inputs are filled out
         if (nameInput != null && phoneInput != null && emailInput != null && messageInput != null
                 && !nameInput.isEmpty() && !phoneInput.isEmpty() && !emailInput.isEmpty() && !messageInput.isEmpty()) {
             try {
+                //Connect to database
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                 connection = DriverManager.getConnection(url, username, password);
 
+                //Query to be executed
                 String query = "insert into contact (Name, PhoneNumber, Email, Message)"
                         + " value (?, ?, ?, ?)";
 
                 PreparedStatement statement = connection.prepareStatement(query);
 
+                //Update query with values from form, execute, and close connection
                 statement.setString(1, nameInput);
                 statement.setString(2, phoneInput);
                 statement.setString(3, emailInput);
                 statement.setString(4, messageInput);
                 statement.execute();
+                connection.close();
+                
+                //Foward user to thank you note
+                getServletContext().getRequestDispatcher(CONTACT_THANK_YOU_URL).forward(request, response);
             } catch (InstantiationException | IllegalAccessException | SQLException | ClassNotFoundException ex) {
                 ex.printStackTrace();
             }
         } else {
             session.setAttribute("errorMessage", MISSING_PARAM_MESSAGE);
-            getServletContext().getRequestDispatcher(CONTACT_US_URL).forward(request, response);
+            getServletContext().getRequestDispatcher(CONTACT_US_URL).forward(request, response);;
         }
     }
 

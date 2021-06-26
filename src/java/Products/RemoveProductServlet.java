@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
  * @author carlosdelcarpio
  */
 @WebServlet(name = "RemoveProductServlet", urlPatterns = {"/RemoveProductServlet"})
@@ -45,9 +44,11 @@ public class RemoveProductServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         try {
+            //Connect to database
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(url, username, password);
 
+            //Query to be executed
             query = "delete from product where ProductID = " + request.getParameter("id");
 
             //Query to be sent
@@ -55,16 +56,10 @@ public class RemoveProductServlet extends HttpServlet {
             deleteProduct.execute();
             connection.close();
             
-            
+            //Foward user to store page
             getServletContext().getRequestDispatcher(STORE_URL).forward(request, response);
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException | IllegalAccessException | SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
-        } catch (IllegalAccessException ex) {
-            ex.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
     } 
 

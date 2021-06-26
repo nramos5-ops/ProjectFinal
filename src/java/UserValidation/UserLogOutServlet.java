@@ -30,6 +30,7 @@ public class UserLogOutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        //Logs user out of the session.
         request.getSession().invalidate();
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }

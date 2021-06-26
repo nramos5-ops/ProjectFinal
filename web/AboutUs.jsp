@@ -11,20 +11,21 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="Description" content="Website for ThriftCave.">
+        <meta name="Description" content="ThriftCave">
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
         <!-- css -->
         <link rel="stylesheet" href="Styles.css">
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="Ramos-Script.js"></script>
-        <title>ThriftCave</title>
+        <title>About Us</title>
     </head>
 
     <body>
         <header>
             <nav class="StoreLogo">
-                <img src="Thrift.png" alt="Logo">
+                <!--Navigation Bar-->
+                <img src="Images/Thrift.png" alt="Logo">
 
                 <ul class="NavigationBar">
                     <li><a href="index.jsp">Home</a></li>
@@ -47,26 +48,39 @@
         <main>
             <div class="content">
                 <h1>About us</h1>
-                <div class="aboutusImg">
-                    <img src="FamilySunset.jpg" alt="WorkInProgress" style="height: 40vh;">
+                <div class="aboutus-row">
+                    <div class="aboutus-column">
+                        <img src="Images/aboutus.jpg" alt="WorkInProgress" class="aboutus-image">
+                    </div>
                 </div>
+                
 
-                <p>We are a small company based off of Swannanoa, North Carolina. We love our community very much and are actively involved
-                    in making our community a better place. The company was established to make thrifting different then what
-                    it is originally and we hope that everyone can find the joy of thrifting from the comfort of their homes! We accept donation of any kind and take what
-                    you don't want and repurpose them for others. The company is ever expanding and the goal is to have a hubs for
-                    you to donate in every major city of north carolina. The idea is we have an online thrift store where you can shop
-                    and we ship them directly to you.</p>
+                <div class="aboutus-row"> 
+                    <p class="aboutus-text">
+                        We are a small company based off of Swannanoa, North Carolina. 
+                        We love our community very much and are actively involved in making our community a better place.
 
-                <h1 style="padding-top: 10px; padding-bottom: 15px;">Meet the team!</h1>    
+                        The company was established to make thrifting different then what it is originally and we hope that 
+                        everyone can find the joy of thrifting from the comfort of their homes!
 
-                <div id="team"></div>   
+                        We accept donation of any kind and take what you don't want and repurpose them for others. 
+                        The company is ever expanding and the goal is to have a hubs for you to donate in every major city in North Carolina. 
+                        The idea is we have an online thrift store where you can shop and we ship them directly to you.
+                    </p>
+                </div>
             </div>
         </main>
 
         <footer>
             <a href="index.jsp">Home</a>
-            <a href="ContactUs.jsp">Contact</a>
+            <c:choose>
+                <c:when test="${admin == 'admin'}">
+                    <a href="/ProjectFinal/contactList">Contact</a>
+                </c:when>
+                <c:otherwise>
+                    <a href="ContactUs.jsp">Contact</a>
+                </c:otherwise>
+            </c:choose>
         </footer>
     </body>
 </html>

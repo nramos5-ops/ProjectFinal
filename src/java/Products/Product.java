@@ -8,7 +8,6 @@ package Products;
 import java.io.Serializable;
 
 /**
- *
  * @author carlosdelcarpio
  */
 public class Product implements Serializable {
@@ -18,15 +17,13 @@ public class Product implements Serializable {
     private String imagePath; 
 
     public Product() {
-        this.ID = -1;
+        this.ID = 0;
         this.name = "";
         this.price = 0.00;
         this.imagePath = "";
     }
     
-    
-    
-
+    //Setters and getters
     public int getID() {
         return ID;
     }
@@ -59,6 +56,8 @@ public class Product implements Serializable {
         this.imagePath = imagePath;
     }
 
+    
+    //toString function
     @Override
     public String toString() {
         return "Product{" + "ID=" + ID + ", name=" + name + ", price=" + price + ", imagePath=" + imagePath + '}';

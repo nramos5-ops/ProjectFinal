@@ -8,7 +8,6 @@ package ContactUs;
 import java.io.Serializable;
 
 /**
- *
  * @author carlosdelcarpio
  */
 public class Contact implements Serializable{
@@ -18,6 +17,8 @@ public class Contact implements Serializable{
     String email;
     String message;
 
+    
+    //Setters and Getters
     public int getContactID() {
         return contactID;
     }
@@ -58,6 +59,8 @@ public class Contact implements Serializable{
         this.message = message;
     }
 
+    
+    //toString function
     @Override
     public String toString() {
         return "Contact{" + "contactID=" + contactID + ", name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", message=" + message + '}';

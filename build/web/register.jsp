@@ -15,8 +15,9 @@
     
     <body>
         <header>
+            <!--Navigation Bar-->
             <nav class="StoreLogo">
-                <img src="Thrift.png" alt="Logo">
+                <img src="Images/Thrift.png" alt="Logo">
 
                 <ul class="NavigationBar">
                     <li><a href="login.jsp">Login</a></li>
@@ -43,7 +44,7 @@
                     <p>${errorMessage}</p>
                     
                     <input type ="submit" name="submit" value="Submit">
-                </form>
+                </form><br>
                 
                 <a href="login.jsp">Already a user?</a>
              </div> 

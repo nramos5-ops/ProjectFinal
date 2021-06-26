@@ -6,7 +6,6 @@
 package ContactUs;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,7 +18,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
  * @author carlosdelcarpio
  */
 @WebServlet(name = "ContactContactedServlet", urlPatterns = {"/ContactContactedServlet"})
@@ -42,14 +40,15 @@ public class ContactContactedServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
         try {
+            //Connect to database
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(url, username, password);
 
+            //Query to be executed
             query = "delete from contact where ContactID = " + request.getParameter("id");
 
             //Query to be sent
@@ -58,6 +57,7 @@ public class ContactContactedServlet extends HttpServlet {
             connection.close();
             
             
+            //Call servlet to gather new database updates and reload page
             getServletContext().getRequestDispatcher(CONTACTUS_URL).forward(request, response);
         } catch (InstantiationException | IllegalAccessException | SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
