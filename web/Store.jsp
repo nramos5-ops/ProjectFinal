@@ -30,7 +30,14 @@
                 <ul class="NavigationBar">
                     <li><a href="index.jsp">Home</a></li>
                     <li><a href="/ProjectFinal/products">Store</a></li>
-                    <li><a href="ContactUs.jsp">Contact</a></li>
+                    <c:choose>
+                        <c:when test="${admin == 'admin'}">
+                            <li><a href="/ProjectFinal/contactList">Contact</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="ContactUs.jsp">Contact</a></li>
+                        </c:otherwise>
+                    </c:choose>
                     <li><a href="AboutUs.jsp">About</a></li>
                     <li><a href="FAQ.jsp">FAQ</a></li>
                     <li><a href="/ProjectFinal/logout">Logout</a></li>

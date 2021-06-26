@@ -6,7 +6,6 @@
 package ContactUs;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -48,7 +47,7 @@ public class ContactValidationServlet extends HttpServlet {
         String phoneInput   = request.getParameter("phone");
         String emailInput   = request.getParameter("email");
         String messageInput = request.getParameter("message");
-        HttpSession session   = request.getSession();
+        HttpSession session = request.getSession();
         
         
         response.setContentType("text/html;charset=UTF-8");

@@ -66,4 +66,26 @@
         <servlet-name>ContactValidationServlet</servlet-name>
         <url-pattern>/contactValidation</url-pattern>
     </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>ContactListServlet</servlet-name>
+        <servlet-class>ContactUs.ContactListServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ContactListServlet</servlet-name>
+        <url-pattern>/contactList</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+        <servlet-name>ContactContactedServlet</servlet-name>
+        <servlet-class>ContactUs.ContactContactedServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ContactContactedServlet</servlet-name>
+        <url-pattern>/contactContacted</url-pattern>
+    </servlet-mapping>
 </web-app>
