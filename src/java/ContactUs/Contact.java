@@ -73,6 +73,4 @@ public class Contact implements Serializable{
     public String toString() {
         return "Contact{" + "contactID=" + contactID + ", name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", message=" + message + '}';
     }
-    
-    
 }

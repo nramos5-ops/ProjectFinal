@@ -105,10 +105,7 @@ public class UserValidationServlet extends HttpServlet {
                                                 : " and user.admin = 0";
                     
                     //Sets session admin value
-                    if (adminInput != null) {
-                        session.setAttribute("admin", "admin");
-                    }
-
+                    if (adminInput != null) session.setAttribute("admin", "admin");
                     //Query to be sent
                     validateUser = connection.prepareStatement(query);
                     resultset = validateUser.executeQuery();
