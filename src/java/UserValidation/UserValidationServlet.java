@@ -7,8 +7,6 @@ package UserValidation;
 
 import java.io.IOException;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -106,6 +104,7 @@ public class UserValidationServlet extends HttpServlet {
                     
                     //Sets session admin value
                     if (adminInput != null) session.setAttribute("admin", "admin");
+                    
                     //Query to be sent
                     validateUser = connection.prepareStatement(query);
                     resultset = validateUser.executeQuery();
@@ -150,7 +149,8 @@ public class UserValidationServlet extends HttpServlet {
                     //Removes error messages
                     session.removeAttribute("errorMessage");
                     
-                    if (firstNameInput != null && lastNameInput != null && usernameInput != null && passwordInput != null) {
+                    if (firstNameInput != null && lastNameInput != null && usernameInput != null && passwordInput != null
+                            && !firstNameInput.isEmpty() && !lastNameInput.isEmpty() && !usernameInput.isEmpty() && !passwordInput.isEmpty()) {
                         //Adds new user to database
                         addUserToSQL(firstNameInput, lastNameInput, usernameInput, passwordInput);
                         getServletContext().getRequestDispatcher(HOME_URL).forward(request, response);
@@ -200,7 +200,7 @@ public class UserValidationServlet extends HttpServlet {
             statement.setString(2, lastName);
             statement.setString(3, userName);
             statement.setString(4, password);
-            statement.setInt(5, 0);
+            statement.setInt(5, 0);//Set to zero for non-admin users. Admins are registered directly in the database
             
             //Executes query
             statement.execute();

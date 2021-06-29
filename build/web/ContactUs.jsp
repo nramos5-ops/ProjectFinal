@@ -63,7 +63,7 @@
 
                     <div class="inputinfo">
                         <label>Email: </label>
-                        <input type="text" name="email">
+                        <input type="email" name="email">
                     </div>
 
                     <div class="inputinfo">
